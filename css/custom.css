@@ -1,0 +1,6 @@
+#star{
+	color:red;
+}
+.active:hover{
+	color:white;
+}

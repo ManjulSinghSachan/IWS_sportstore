@@ -100,7 +100,7 @@
 						$productID=$_GET["product_id"];
 	$sql = "SELECT * FROM products WHERE product_id='$productID';";
 	
-   $ret=mysql_query($sql);
+	$ret=mysql_query($sql);
 	$data = mysql_fetch_array($ret);
 									// product ID
 									$id = $data['product_id'];
@@ -112,6 +112,16 @@
 									$photo = $data['photo'];
 									// detail
 									$detail = $data['detail'];
+									//category
+									$category_id = $data['category_id'];
+									
+									
+				//retrieve data for breadcrumb
+				$sql2 = "SELECT category_name FROM categories where category_id = '$category_id';";
+				echo $sql2;
+				$ret2=mysql_query($sql2);
+				$data2 = mysql_fetch_array($ret2);
+				$arr = explode('_',$data2[0]);
 
 				?>
 				________________________________________________ -->
@@ -125,11 +135,13 @@
                     <ul class="breadcrumb">
                         <li><a href="home.php">Home</a>
                         </li>
-                        <li><a href="search_result_page.php?category_name=women">Ladies</a>
+                        <li><a href="search_result_page.php?category_name=<?php echo $arr[0]?>"><?php echo $arr[0]?></a>
                         </li>
-                        <li><a href="search_result_page.php?category_name=women_t-shirts">T-shirts</a>
+						<li><a href="search_result_page.php?category_name=<?php echo $arr[0]."_".$arr[1]?>"><?php echo $arr[1]?></a>
                         </li>
-                        <li>Product</li>
+                        <li><a href="search_result_page.php?category_name=<?php echo $data2[0]?>"><?php echo $arr[2]?></a>
+                        </li>
+                        <li><?php echo $name ?></li>
                     </ul>
 
                 </div>
@@ -158,8 +170,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="active">
-                                    <a href="search_result_page.php?category_name=women">Ladies  </a>
+                                <li>
+                                    <a href="search_result_page.php?category_name=women">Ladies</a>
                                     <ul>
                                          <li><a href="search_result_page.php?category_name=women_football">Football</a>
                                         </li>

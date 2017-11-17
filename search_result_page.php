@@ -88,6 +88,7 @@
 				$category_name="NIL";
 			$category_name_display=str_replace('_',' ',$category_name);
 			$category_name_display=str_replace('%',' ',$category_name_display);
+			$arr = explode(" ",$category_name_display);
 	?>
 	<div id="all">
 
@@ -96,9 +97,32 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="home.php">Home</a>
-                        </li>
-                        <li><?php echo $category_name_display?></li>
+                        <li><a href="home.php">Home</a></li>
+                        <li>
+						
+						
+						<?php
+						if(sizeof($arr) > 2){
+							echo "<a href=\"search_result_page.php?category_name=".$arr[0]."\">".$arr[0]."</a>";
+						}
+						else	
+							echo $arr[0];
+						
+						?>
+						
+						</li>
+						<?php
+							if(sizeof($arr) > 2)
+								if(sizeof($arr) > 3){
+									echo "<li><a href=\"search_result_page.php?category_name=".$arr[0]."_".$arr[1]."\">".$arr[1]."</a></li>";
+									echo "<li>$arr[2]</li>";
+								}
+								else
+									echo "<li>$arr[1]</li>";
+								
+								
+						
+						?>
                     </ul>
                 </div>
 

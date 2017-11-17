@@ -102,7 +102,7 @@
                     </ul>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <!-- *** MENUS AND FILTERS ***
  _________________________________________________________ -->
                 <div class="panel panel-default sidebar-menu">
@@ -155,7 +155,9 @@
 							$num_rows=mysql_num_rows($ret);
 							//echo $num_rows;
 							if($num_rows>0){
+								$p_count = 0;
 								while($data=mysql_fetch_array($ret)){
+									$p_count++;
 									// product ID
 									$id = $data['product_id'];
 									// product name
@@ -166,7 +168,14 @@
 									$photo = $data['photo'];
 
 				?>
-				 <div class="col-md-4 col-sm-6">
+				<?php
+					//echo $p_count;
+					if ($p_count % 3 == 1 && $p_count > 1){
+						echo "<div class=\"col-md-2\"></div>";
+						
+					}
+				?>
+				 <div class="col-md-3 col-sm-6">
                             <div class="product">
                                 <div class="flip-container">
                                     <div class="flipper">
@@ -198,6 +207,8 @@
                             </div>
                             <!-- /.product -->
                     </div>
+					
+					
 				<?php
 								}
 							}

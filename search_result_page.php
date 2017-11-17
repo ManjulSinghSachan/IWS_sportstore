@@ -126,7 +126,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="search_result_page?category_name=women">Ladies </a>
                                     <ul>
                                          <li><a href="search_result_page.php?category_name=women_football">Football</a>

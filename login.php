@@ -1,3 +1,4 @@
+
 <?php
 require 'connect.php';
 require 'core_file.php';
@@ -7,7 +8,7 @@ if(isset($_POST['email'])&&isset($_POST['pwd'])){
 		$log_in_pwd=$_POST['pwd'];
 		//echo $log_in_email;
 		//echo $log_in_pwd;
-		$query_new="SELECT user_id FROM login WHERE email='".mysql_real_escape_string($log_in_email)."' AND pwd='".mysql_real_escape_string($log_in_pwd)."'";
+		$query_new="SELECT user_id FROM login WHERE name='".mysql_real_escape_string($log_in_email)."' AND pwd='".mysql_real_escape_string($log_in_pwd)."'";
 		if($ret_new=mysql_query($query_new)){
 			$debug= "Query Executed";
 			//echo $ret_new;
@@ -27,6 +28,7 @@ if(isset($_POST['email'])&&isset($_POST['pwd'])){
 		
 	
 	}
+
 
 
 ?>

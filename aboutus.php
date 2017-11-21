@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,16 +100,11 @@ We’ve created a seamless user interface to let you scroll through your favouri
                         <h2>Team Members:</h2>
 
                         <ol>
-                            <li>Gopal Purohit</li>
-                            <li>Hari Prasad</li>
-							<li>I Harshvardhan</li>
-							<li>Ishan Singh</li>
-							<li>Ishan Tyagi</li>
-							<li>Jagmeet Oberoi</li>
-							<li>Jaison Jose</li>
+                            <li>Amitesh</li>
+                            
 							<li>Junaid Tinwala</li>
 							<li>Kanishk Anand</li>
-							<li>Karthikeyan Gangavarapu</li>
+							<li>Manjul</li>
                         </ol>
 
                       <!--  <blockquote>
@@ -172,5 +168,6 @@ We’ve created a seamless user interface to let you scroll through your favouri
 
 
 </body>
+
 
 </html>

@@ -1,4 +1,8 @@
+
 <?php
+
+	
+
 	require 'core_file.php';
 	
 	
@@ -10,4 +14,4 @@
 	else
 		echo 'Not logged in';
 		//include 'home.php';
-?>	
+?>

@@ -1,3 +1,4 @@
+
 <?php 
 	$username="sql12206252";
 	$password="qDhsLVHUV4";
@@ -10,4 +11,5 @@
 		die($db_error);
 	}
 	
+
 ?>

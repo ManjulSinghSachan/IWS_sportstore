@@ -1,3 +1,4 @@
+
 <?php
 	require 'core_file.php';
 	require 'session.php';
@@ -5,4 +6,5 @@
 		header("Location:basket.php");
 	else
 		header("Location:register.php");
+
 ?>

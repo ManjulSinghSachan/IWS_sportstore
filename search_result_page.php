@@ -1,3 +1,4 @@
+
 <?php
 	//require 'core_file.php';
 ?>
@@ -88,6 +89,7 @@
 				$category_name="NIL";
 			$category_name_display=str_replace('_',' ',$category_name);
 			$category_name_display=str_replace('%',' ',$category_name_display);
+			$arr = explode(" ",$category_name_display);
 	?>
 	<div id="all">
 
@@ -96,13 +98,36 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="home.php">Home</a>
-                        </li>
-                        <li><?php echo $category_name_display?></li>
+                        <li><a href="home.php">Home</a></li>
+                        <li>
+						
+						
+						<?php
+						if(sizeof($arr) > 2){
+							echo "<a href=\"search_result_page.php?category_name=".$arr[0]."\">".$arr[0]."</a>";
+						}
+						else	
+							echo $arr[0];
+						
+						?>
+						
+						</li>
+						<?php
+							if(sizeof($arr) > 2)
+								if(sizeof($arr) > 3){
+									echo "<li><a href=\"search_result_page.php?category_name=".$arr[0]."_".$arr[1]."\">".$arr[1]."</a></li>";
+									echo "<li>$arr[2]</li>";
+								}
+								else
+									echo "<li>$arr[1]</li>";
+								
+								
+						
+						?>
                     </ul>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <!-- *** MENUS AND FILTERS ***
  _________________________________________________________ -->
                 <div class="panel panel-default sidebar-menu">
@@ -126,7 +151,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="search_result_page?category_name=women">Ladies </a>
                                     <ul>
                                          <li><a href="search_result_page.php?category_name=women_football">Football</a>
@@ -155,7 +180,9 @@
 							$num_rows=mysql_num_rows($ret);
 							//echo $num_rows;
 							if($num_rows>0){
+								$p_count = 0;
 								while($data=mysql_fetch_array($ret)){
+									$p_count++;
 									// product ID
 									$id = $data['product_id'];
 									// product name
@@ -166,7 +193,14 @@
 									$photo = $data['photo'];
 
 				?>
-				 <div class="col-md-4 col-sm-6">
+				<?php
+					//echo $p_count;
+					if ($p_count % 3 == 1 && $p_count > 1){
+						echo "<div class=\"col-md-2\"></div>";
+						
+					}
+				?>
+				 <div class="col-md-3 col-sm-6">
                             <div class="product">
                                 <div class="flip-container">
                                     <div class="flipper">
@@ -198,6 +232,8 @@
                             </div>
                             <!-- /.product -->
                     </div>
+					
+					
 				<?php
 								}
 							}
@@ -222,3 +258,4 @@
 	<?php require 'footer.php';?>
 </body>
 </html>
+

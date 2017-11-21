@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -391,5 +392,5 @@
         </div>
         <!-- /#content -->
 		<?php require 'footer.php';?>
-	</body>
+</body>
 </html>

@@ -3,8 +3,8 @@
 	$username="sql12206252";
 	$password="qDhsLVHUV4";
 	$servername="sql12.freemysqlhosting.net:3306";
-	$connection= mysql_connect($servername,$username,$password);
-	$select_db=mysql_select_db('sportskart');
+	$connection= mysqli_connect($servername,$username,$password);
+	$select_db=mysql_select_db('sql12206252');
 	$db_error="";
 	if(!$connection||!$select_db){
 		$db_error="Cannot connect to DB";

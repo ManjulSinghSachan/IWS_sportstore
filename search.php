@@ -5,11 +5,14 @@ if(isset($_GET['search_field'])){
 	$search_field=$_GET['search_field'];
 }
 if(!empty($search_field)){
-		if(@mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252")){
+		
+		$connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
+		
+		if(mysqli_connect_errno()){
 			
 			
 			$search_field=str_replace(' ','_',$search_field);
-			$query="SELECT category_name FROM categories WHERE category_name LIKE '%".mysql_real_escape_string($search_field)."%'";
+			$query="SELECT category_name FROM categories WHERE category_name LIKE '%".mysqli_real_escape_string($connect, $search_field)."%'";
 			
 			if(!($query_run=mysql_query($query))){
 				echo "Bad query";

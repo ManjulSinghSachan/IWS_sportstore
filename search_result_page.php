@@ -179,11 +179,11 @@
 						$query= "SELECT categories.category_id, products.product_id,products.category_id,products.product_name,products.price,products.photo from categories,products WHERE categories.category_name LIKE '".mysqli_real_escape_string($connect ,$category_name)."' AND products.category_id=categories.category_id;";
 						if($ret=mysqli_query($connect ,$query)){
 							$msg="Query executed";
-							$num_rows=mysql_num_rows($ret);
+							$num_rows=mysqli_num_rows($ret);
 							//echo $num_rows;
 							if($num_rows>0){
 								$p_count = 0;
-								while($data=mysql_fetch_array($ret)){
+								while($data=mysqli_fetch_array($ret)){
 									$p_count++;
 									// product ID
 									$id = $data['product_id'];

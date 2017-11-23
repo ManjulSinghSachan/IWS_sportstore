@@ -174,7 +174,9 @@
 
 				<?php
 
-						$query= "SELECT categories.category_id, products.product_id,products.category_id,products.product_name,products.price,products.photo from categories,products WHERE categories.category_name LIKE '".mysql_real_escape_string($category_name)."' AND products.category_id=categories.category_id;";
+						$connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
+						
+						$query= "SELECT categories.category_id, products.product_id,products.category_id,products.product_name,products.price,products.photo from categories,products WHERE categories.category_name LIKE '".mysqli_real_escape_string($connect ,$category_name)."' AND products.category_id=categories.category_id;";
 						if($ret=mysql_query($query)){
 							$msg="Query executed";
 							$num_rows=mysql_num_rows($ret);

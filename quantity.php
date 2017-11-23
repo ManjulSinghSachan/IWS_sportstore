@@ -5,7 +5,7 @@
     $str = $_POST['id'];
     $arr = explode(',',$str);
 
-    $connect = mysqli_connect("localhost","root","kanishk","sportskart");
+    $connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
     
     $id = intval($arr[0]);
 	$op = $arr[1];

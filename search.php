@@ -5,9 +5,8 @@ if(isset($_GET['search_field'])){
 	$search_field=$_GET['search_field'];
 }
 if(!empty($search_field)){
-		if(@mysql_connect('localhost','root','kanishk')){
-			if(@mysql_select_db('sportskart')){
-		
+		if(@mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252")){
+			
 			
 			$search_field=str_replace(' ','_',$search_field);
 			$query="SELECT category_name FROM categories WHERE category_name LIKE '%".mysql_real_escape_string($search_field)."%'";
@@ -23,7 +22,6 @@ if(!empty($search_field)){
 			
 				
 			}
-		}
 	}	
 	
 	

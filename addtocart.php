@@ -7,7 +7,7 @@
 		$user_id=$_SESSION['user_id'];
     $id = intval($_POST['name']);
 
-    $connect = mysqli_connect("localhost","root","kanishk","sportskart");
+    $connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
 
     $query = "SELECT * FROM products WHERE product_id='$id'";
     $result = mysqli_query($connect, $query);

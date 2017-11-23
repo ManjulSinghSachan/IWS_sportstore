@@ -67,7 +67,7 @@
 				          //alert("Product Added to Kart! Checkout the Kart Page!");
 						  //alert(msg);
 				        });
-							window.location.replace("http://localhost:9999/sportsnew/basket.php");
+							window.location.replace("basket.php");
 				      });
 					  
 					  

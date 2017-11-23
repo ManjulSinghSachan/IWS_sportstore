@@ -89,9 +89,11 @@
 						$productID=$_GET["product_id"];
 	
 	
+	$connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
+	
 	$sql = "SELECT * FROM products WHERE product_id='$productID';";
-	$ret=mysql_query($sql);
-	$data = mysql_fetch_array($ret);
+	$ret=mysqli_query($connect ,$sql);
+	$data = mysqli_fetch_array($ret);
 									// product ID
 									$id = $data['product_id'];
 									// product name
@@ -109,8 +111,8 @@
 				//retrieve data for breadcrumb
 				$sql2 = "SELECT category_name FROM categories where category_id = '$category_id';";
 				//echo $sql2;
-				$ret2=mysql_query($sql2);
-				$data2 = mysql_fetch_array($ret2);
+				$ret2=mysqli_query($connect, $sql2);
+				$data2 = mysqli_fetch_array($ret2);
 				$arr = explode('_',$data2[0]);
 				
 				//Recommendation
@@ -120,8 +122,8 @@
 				if(logged_in()){
 					$user_id = $_SESSION['user_id'];
 					$query = "SELECT* FROM login where user_id = '$user_id';";
-					$ret = mysql_query($query);
-					$product_data = mysql_fetch_array($ret)[4];
+					$ret = mysqli_query($connect, $query);
+					$product_data = mysqli_fetch_array($ret)[4];
 					$array = explode(',',$product_data);
 					$search =array_search((string)$id,$array); 
 					
@@ -154,7 +156,7 @@
 					//store in database
 					$product_data = implode(",",$array);
 					$sql = "UPDATE login SET products_viewed = '$product_data' WHERE user_id = '$user_id';";
-					mysql_query($sql);
+					mysqli_query($connect, $sql);
 				}
 				?>
 				________________________________________________ -->

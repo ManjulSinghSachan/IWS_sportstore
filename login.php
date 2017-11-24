@@ -9,12 +9,10 @@ if(isset($_POST['email'])&&isset($_POST['pwd'])){
 		//echo $log_in_email;
 		//echo $log_in_pwd;
 		$query_new="SELECT user_id FROM login WHERE name='".$log_in_email."' AND pwd='".$log_in_pwd."';";
-		echo $query_new;
-		$ret_new=mysqli_query($connect, $query_new);
-
-		if($ret_new){
+		//echo $query_new;
+		if($ret_new=mysqli_query($connect, $query_new)){
 			$debug= "Query Executed";
-			echo $ret_new;
+			//echo $ret_new;
 			$num_rows=mysqli_num_rows($ret_new);
 			if($num_rows==0)
 				$error= "Invalid UserName/Password combination";
@@ -26,9 +24,6 @@ if(isset($_POST['email'])&&isset($_POST['pwd'])){
 			//	echo "SESSION ID".$_SESSION['user_id'];
 				header("Location:home.php");
 			}
-		}
-		else {
-			die " db error";
 		}
 
 

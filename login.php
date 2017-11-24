@@ -6,9 +6,10 @@ $error="";
 if(isset($_POST['email'])&&isset($_POST['pwd'])){
 		$log_in_email=$_POST['email'];
 		$log_in_pwd=$_POST['pwd'];
-		echo $log_in_email;
-		echo $log_in_pwd;
+		//echo $log_in_email;
+		//echo $log_in_pwd;
 		$query_new="SELECT user_id FROM login WHERE name='".mysqli_real_escape_string($connect, $log_in_email)."' AND pwd='".mysqli_real_escape_string($connect, $log_in_pwd)."'";
+		echo $query_new;
 		if($ret_new=mysqli_query($connect, $query_new)){
 			$debug= "Query Executed";
 			echo $ret_new;

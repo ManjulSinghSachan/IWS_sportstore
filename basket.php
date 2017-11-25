@@ -105,8 +105,13 @@
 <body>
 
   <?php
-	require 'navbar.php';			
-      $query = "SELECT * FROM cartpage ORDER BY product_id ASC";
+	require 'navbar.php';	
+
+	  $return_value=logged_in();
+	  if($return_value)
+		$user_id =  $_SESSION['user_id'];
+		
+      $query = "SELECT * FROM cartpage WHERE user_id = '$user_id' ORDER BY product_id ASC;";
       $result = mysql_query($query);
       $subtotal = 0;
       $num = mysql_num_rows($result);

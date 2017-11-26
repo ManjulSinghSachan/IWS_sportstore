@@ -51,15 +51,15 @@
 			else{
 				$error="";
 				$query="SELECT email FROM login WHERE email='".mysql_real_escape_string($email)."'";
-				$ret=mysql_query($query);
-				$num=mysql_num_rows($ret);
+				$ret=mysqli_query($connection,$query);
+				$num=mysqli_num_rows($ret);
 				if($num>0){
 					$error="Email already in use. Kindly enter new e-mail.";
 					
 				}
 				else{
 					$query="INSERT INTO login". "(name,email,pwd)". "VALUES"."('$username','$email','$pwd')";
-					$ret=mysql_query($query);
+					$ret=mysqli_query($connection,$query);
 				
 					if(!$ret)
 						$error= "Couldn't Sign Up. Please try again.";
@@ -158,5 +158,4 @@
         </div>
     <?php require 'footer.php';?>
 	</body>
-
 </html>

@@ -1,4 +1,3 @@
-
 <?php
 
     require 'core_file.php';

@@ -1,5 +1,4 @@
 
-
 <?php
 	
 	function logged_in() {
@@ -10,5 +9,4 @@
 		else 
 	        return false;
 	}
-
 ?>

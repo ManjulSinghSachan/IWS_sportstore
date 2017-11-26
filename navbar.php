@@ -1,8 +1,8 @@
-
 <?php
 require 'connect.php';
+require 'cookies.php';
 require 'session.php';
-	
+
 if(!logged_in()){
 	include 'login.php';
 }
@@ -33,10 +33,11 @@ if(!logged_in()){
 		}
 	}
 	
+	
 </script>
 	
 
-<div id="top" style="position:relative">
+<div id="top" style="position:relative" onload="checkcookie();">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
                 <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">Offer of the day</a>  <a href="#">Get flat 35% off on orders over Rs.50!</a>
@@ -48,7 +49,7 @@ if(!logged_in()){
 						else
 							$val=0;
 					?>
-                    <li onclick="logout('<?php echo $val?>')"><a href="#" data-toggle="modal" data-target="#login-modal"><?php if(logged_in())
+                    <li onclick="logout('<?php echo $val?>')"><a id="loginlink" href="#" data-toggle="modal" data-target="#login-modal"><?php if(logged_in())
 										$log_str="Log Out?";
 									else
 										$log_str="Login";
@@ -80,7 +81,7 @@ if(!logged_in()){
                             <div class="form-group">
                                 <input type="password" class="form-control" id="password-modal" placeholder="password" name="pwd">
                             </div>
-							<p style="color:red"><?php echo $error?></p>	
+							<p style="color:red"><?php if(!logged_in())echo $error?></p>	
                             <p class="text-center">
                                 <button class="btn btn-primary" name="log_in_btn"><i class="fa fa-sign-in"></i>
 										Log in</button>

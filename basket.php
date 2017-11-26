@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,8 +54,10 @@
               //alert( "Data Saved: " + msg );
 			  alert(msg);
             });
+
               location.reload(true);
         });
+
         $(".fa-minus").on('click',function(){
             
             //alert(str);
@@ -69,18 +72,25 @@
               //alert( "Data Saved: " + msg );
 			  alert(msg);
             });
+
               location.reload(true);
         });
+
     });
+
   </script>
 
     <!-- AJAX -->
     <script>
     $(document).ready(function() {
+
+
     // delete an entry
     $("a.deleteButton").click(function() {
+
       var t = $(this).attr('name');
       console.log(t);
+
         $.ajax({
         type: "POST",
         url: "delete.php",
@@ -88,15 +98,24 @@
         }).done(function( msg ) {
           //alert( "Data Saved: " + msg );
         });
+
           location.reload(true);
       });
       //change quantity
       $(":input").bind('keyup mouseup', function () {
+
           //alert("changed");
           //alert( "Data Saved");
+
+
           //location.reload(true);
         });
+
+
+
     });
+
+
     </script>
 
 
@@ -105,16 +124,16 @@
 <body>
 
   <?php
-	require 'navbar.php';	
-
-	  $return_value=logged_in();
-	  if($return_value)
-		$user_id =  $_SESSION['user_id'];
-		
-      $query = "SELECT * FROM cartpage WHERE user_id = '$user_id' ORDER BY product_id ASC;";
+	require 'navbar.php';			
+      $query = "SELECT * FROM cartpage ORDER BY product_id ASC";
       $result = mysql_query($query);
+
+
+
       $subtotal = 0;
+
       $num = mysql_num_rows($result);
+
       ?>
 
 
@@ -159,9 +178,11 @@
                                       <?php
                                       if($num > 0)
                                       {
+
                                           while($row = mysql_fetch_array($result))
                                           {
                                               $subtotal = $subtotal + ((int)$row['price'] * (int)$row['quantity']);
+
                                        ?>
                                         <tr>
                                             <td>
@@ -191,6 +212,7 @@
                                             }
                                           }
                                           $total = 10 + (int)$subtotal;
+
                                         ?>
 
                                     </tbody>
@@ -221,10 +243,8 @@
                     </div>
 				</div>
                     <!-- /.box -->
-				
-					
 
-				<div class="col-md-3">
+    <div class="col-md-3">
                     <div class="box" id="order-summary">
                         <div class="box-header">
                             <h3>Order summary</h3>
@@ -261,77 +281,6 @@
 
                 </div>
                 <!-- /.col-md-3 -->
-				<div class="col-md-12">
-					<div class="box col-md-12">
-						<h3>Recently Viewed Items</h3>
-						<div class="col-md-1"></div>
-					
-					<?php 
-						if(logged_in()){
-							$user_id = $_SESSION['user_id'];
-							$sql = "SELECT* FROM login WHERE user_id = '$user_id';";
-							$ret = mysql_query($sql);
-							$prev = mysql_fetch_array($ret)[4];
-							$array = explode(",",$prev);
-							for($i = 0;$i<sizeof($array);$i++){
-								$sql = "SELECT* FROM products WHERE product_id = '$array[$i]';";
-								$ret = mysql_query($sql);
-								$data = mysql_fetch_array($ret);
-								// product ID
-								$id = $data['product_id'];
-								// product name
-								$name = $data['product_name'];
-								// price
-								$price = $data['price'];
-								// photo
-								$photo = $data['photo'];
-								
-								
-							
-							
-								
-				
-				
-					?>
-					
-					<div class="col-md-2 col-sm-6">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="product_detail.php?product_id=<?php echo $id?>">
-                                                <img src="<?php echo $photo?>" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="product_detail.php?product_id=<?php echo $id?>">
-                                                <img src="<?php echo $photo?>" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="product_detail.php?product_id=<?php echo $id?>" class="invisible">
-                                    <img src="<?php echo $photo?>" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3><a href="product_detail.php?product_id=<?php echo $id?>"><?php echo $name?></a></h3>
-                                    <p class="price">Rs.<?php echo $price?></p>
-                                    <p class="buttons">
-                                        <a href="product_detail.php?product_id=<?php echo $id?>" class="btn btn-default">View detail</a>
-                                        
-                                    </p>
-
-                                </div>
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                    </div>
-					<?php }} ?>
-					
-						<div class="col-md-1"></div>
-					</div>
-				</div>
-				
 
             </div>
             <!-- /.container -->

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +7,6 @@
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Obaju e-commerce template">
-    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
 
     <title>
@@ -30,7 +27,6 @@
     <!-- theme stylesheet -->
     <link href="css/style.default.css" rel="stylesheet" id="theme-stylesheet">
 
-    <!-- your stylesheet with modifications -->
     <link href="css/custom.css" rel="stylesheet">
 
     <script src="js/respond.min.js"></script>
@@ -55,8 +51,8 @@
 		}
 		if(!empty($user_id)){
 			$query="Select * from user WHERE user_id='$user_id';";
-			if($ret=mysql_query($query)){
-				$data=mysql_fetch_array($ret);
+			if($ret=mysqli_query($connection,$query)){
+				$data=mysqli_fetch_array($ret);
 				$firstname=$data['firstname'];
 				$lastname=$data['lastname'];
 				$phone=$data['phone'];
@@ -199,6 +195,5 @@
 		<?php require 'footer.php';?>
 
 </body>
-
 
 </html>

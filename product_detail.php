@@ -7,8 +7,6 @@
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Obaju e-commerce template">
-    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
 
     <title>
@@ -39,9 +37,12 @@
 	<script>
 				  $(document).ready(function() {
 							$(".addToKart").click(function() {
+
 								//alert("d");
 								var s = $(this).attr('id');
+
 						//		alert(s);
+
 								$.ajax({
 				        type: "POST",
 				        url: "addtocart.php",
@@ -53,12 +54,17 @@
 						  else
 							alert(msg);
 				        });
+
+
 				      });
 					  
 					  $(".addToKart2").click(function() {
+
 								//alert("d");
 								var s = $(this).attr('id');
+
 								//alert(s);
+
 								$.ajax({
 				        type: "POST",
 				        url: "addtocart.php",
@@ -67,11 +73,14 @@
 				          //alert("Product Added to Kart! Checkout the Kart Page!");
 						  //alert(msg);
 				        });
-							window.location.replace("basket.php");
+							window.location.replace("http://localhost:9999/sportsnew/basket.php");
+
+
 				      });
 					  
 					  
 					});
+
 		</script>
 
 
@@ -87,13 +96,10 @@
  _________<?php
 						if(!empty($_GET['product_id']))
 						$productID=$_GET["product_id"];
-	
-	
-	$connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
-	
 	$sql = "SELECT * FROM products WHERE product_id='$productID';";
-	$ret=mysqli_query($connect ,$sql);
-	$data = mysqli_fetch_array($ret);
+	
+   $ret=mysqli_query($connection,$sql);
+	$data = mysql_fetch_array($ret);
 									// product ID
 									$id = $data['product_id'];
 									// product name
@@ -104,60 +110,7 @@
 									$photo = $data['photo'];
 									// detail
 									$detail = $data['detail'];
-									//category
-									$category_id = $data['category_id'];
-									
-									
-				//retrieve data for breadcrumb
-				$sql2 = "SELECT category_name FROM categories where category_id = '$category_id';";
-				//echo $sql2;
-				$ret2=mysqli_query($connect, $sql2);
-				$data2 = mysqli_fetch_array($ret2);
-				$arr = explode('_',$data2[0]);
-				
-				//Recommendation
-				
-				$product_data;
-				$debug;
-				if(logged_in()){
-					$user_id = $_SESSION['user_id'];
-					$query = "SELECT* FROM login where user_id = '$user_id';";
-					$ret = mysqli_query($connect, $query);
-					$product_data = mysqli_fetch_array($ret)[4];
-					$array = explode(',',$product_data);
-					$search =array_search((string)$id,$array); 
-					
-					if($search > -1){
-						$temp = $array[(int)$search];
-						$end = ((int)$search)+1;
-						for($i=0;$i<$end;$i++){
-							$t = $array[$i];
-							$array[$i] = $temp;
-							$temp = $t;
-						}
-					}
-					else{
-						$temp = (string)$id;
-						$end = (int)sizeof($array);
-						if($end < 5)
-							array_push($array,$temp);
-						else{
-							for($i=0;$i<$end;$i++){
-								$t = $array[$i];
-								$array[$i] = $temp;
-								$temp = $t;
-							}
-							
-						}
-						
-					}
-					
-					
-					//store in database
-					$product_data = implode(",",$array);
-					$sql = "UPDATE login SET products_viewed = '$product_data' WHERE user_id = '$user_id';";
-					mysqli_query($connect, $sql);
-				}
+
 				?>
 				________________________________________________ -->
    
@@ -170,15 +123,11 @@
                     <ul class="breadcrumb">
                         <li><a href="home.php">Home</a>
                         </li>
-                        <li><a href="search_result_page.php?category_name=<?php echo $arr[0]?>"><?php echo $arr[0]?></a>
+                        <li><a href="search_result_page.php?category_name=women">Ladies</a>
                         </li>
-						<li><a href="search_result_page.php?category_name=<?php echo $arr[0]."_".$arr[1]?>"><?php echo $arr[1]?></a>
+                        <li><a href="search_result_page.php?category_name=women_t-shirts">T-shirts</a>
                         </li>
-                        <li><a href="search_result_page.php?category_name=<?php echo $data2[0]?>"><?php echo $arr[2]?></a>
-                        </li>
-                        <li><?php echo $name ?></li>
-						<li><?php echo $product_data?></li>
-						
+                        <li>Product</li>
                     </ul>
 
                 </div>
@@ -207,8 +156,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="search_result_page.php?category_name=women">Ladies</a>
+                                <li class="active">
+                                    <a href="search_result_page.php?category_name=women">Ladies  </a>
                                     <ul>
                                          <li><a href="search_result_page.php?category_name=women_football">Football</a>
                                         </li>
@@ -334,3 +283,5 @@
 
 
 </body>
+
+</html>

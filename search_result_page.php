@@ -1,4 +1,3 @@
-
 <?php
 	//require 'core_file.php';
 ?>
@@ -13,8 +12,6 @@
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Obaju e-commerce template">
-    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
 
     <title>
@@ -89,7 +86,6 @@
 				$category_name="NIL";
 			$category_name_display=str_replace('_',' ',$category_name);
 			$category_name_display=str_replace('%',' ',$category_name_display);
-			$arr = explode(" ",$category_name_display);
 	?>
 	<div id="all">
 
@@ -98,36 +94,13 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="home.php">Home</a></li>
-                        <li>
-						
-						
-						<?php
-						if(sizeof($arr) > 2){
-							echo "<a href=\"search_result_page.php?category_name=".$arr[0]."\">".$arr[0]."</a>";
-						}
-						else	
-							echo $arr[0];
-						
-						?>
-						
-						</li>
-						<?php
-							if(sizeof($arr) > 2)
-								if(sizeof($arr) > 3){
-									echo "<li><a href=\"search_result_page.php?category_name=".$arr[0]."_".$arr[1]."\">".$arr[1]."</a></li>";
-									echo "<li>$arr[2]</li>";
-								}
-								else
-									echo "<li>$arr[1]</li>";
-								
-								
-						
-						?>
+                        <li><a href="home.php">Home</a>
+                        </li>
+                        <li><?php echo $category_name_display?></li>
                     </ul>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <!-- *** MENUS AND FILTERS ***
  _________________________________________________________ -->
                 <div class="panel panel-default sidebar-menu">
@@ -151,7 +124,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="search_result_page?category_name=women">Ladies </a>
                                     <ul>
                                          <li><a href="search_result_page.php?category_name=women_football">Football</a>
@@ -174,17 +147,13 @@
 
 				<?php
 
-						$connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
-						
-						$query= "SELECT categories.category_id, products.product_id,products.category_id,products.product_name,products.price,products.photo from categories,products WHERE categories.category_name LIKE '".mysqli_real_escape_string($connect ,$category_name)."' AND products.category_id=categories.category_id;";
-						if($ret=mysqli_query($connect ,$query)){
+						$query= "SELECT categories.category_id, products.product_id,products.category_id,products.product_name,products.price,products.photo from categories,products WHERE categories.category_name LIKE '".mysqli_real_escape_string($connection,$category_name)."' AND products.category_id=categories.category_id;";
+						if($ret=mysqli_query($connection,$query)){
 							$msg="Query executed";
 							$num_rows=mysqli_num_rows($ret);
 							//echo $num_rows;
 							if($num_rows>0){
-								$p_count = 0;
 								while($data=mysqli_fetch_array($ret)){
-									$p_count++;
 									// product ID
 									$id = $data['product_id'];
 									// product name
@@ -195,14 +164,7 @@
 									$photo = $data['photo'];
 
 				?>
-				<?php
-					//echo $p_count;
-					if ($p_count % 3 == 1 && $p_count > 1){
-						echo "<div class=\"col-md-2\"></div>";
-						
-					}
-				?>
-				 <div class="col-md-3 col-sm-6">
+				 <div class="col-md-4 col-sm-6">
                             <div class="product">
                                 <div class="flip-container">
                                     <div class="flipper">
@@ -234,8 +196,6 @@
                             </div>
                             <!-- /.product -->
                     </div>
-					
-					
 				<?php
 								}
 							}
@@ -260,4 +220,3 @@
 	<?php require 'footer.php';?>
 </body>
 </html>
-

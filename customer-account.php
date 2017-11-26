@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <?php
@@ -14,8 +13,6 @@
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Obaju e-commerce template">
-    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
 
     <title>
@@ -94,14 +91,14 @@
 			if(!empty($firstname)&&!empty($lastname)&&!empty($street)&&!empty($zip)&&!empty($city)&&!empty($state)&&!empty($user_id))
 			{
 					$q="SELECT user_id from user WHERE user_id='$user_id'";
-					if($ret=mysql_query($q)){
-						$num_rows=mysql_num_rows($ret);
+					if($ret=mysqli_query($connection,$q)){
+						$num_rows=mysqli_num_rows($ret);
 						if($num_rows!=0)
 							$query="UPDATE user SET firstname='$firstname',lastname='$lastname',street='$street',zip='$zip',city='$city',state='$state',company='$company',alternate_email='$alter_email',phone='$phone' WHERE user_id='$user_id';";
 						else
 							$query="INSERT INTO user "."VALUES"."('$firstname','$lastname','$street','$zip','$city','$state','$company','$alter_email','$phone','$user_id');";
 						echo $query;
-						$ret=mysql_query($query);
+						$ret=mysqli_query($connection,$query);
 				
 						if(!$ret)
 							$error= "Couldn't Save Changes. Please try again.";
@@ -137,7 +134,7 @@
 			else{
 			if(!empty($email)&&!empty($new_pwd)&&($new_pwd==$conf_new_pwd)){
 				$query="UPDATE login SET pwd='$new_pwd' WHERE email='$email';";
-				if($ret=mysql_query($query))
+				if($ret=mysqli_query($connection,$query))
 					header("Location:register.php");
 				else
 					$pwd_error="Couldn't change password. Try Again.";

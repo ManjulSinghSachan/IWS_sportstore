@@ -1,4 +1,3 @@
-
  <!-- *** FOOTER ***
  _________________________________________________________ -->
         <div id="footer" data-animate="fadeInUp">
@@ -165,5 +164,4 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/front.js"></script>
 	
-
 <?php ob_flush();?>

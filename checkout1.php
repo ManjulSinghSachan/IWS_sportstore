@@ -55,8 +55,8 @@
 		}
 		if(!empty($user_id)){
 			$query="Select * from user WHERE user_id='$user_id';";
-			if($ret=mysql_query($query)){
-				$data=mysql_fetch_array($ret);
+			if($ret=mysqli_query($connection,$query)){
+				$data=mysqli_fetch_array($ret);
 				$firstname=$data['firstname'];
 				$lastname=$data['lastname'];
 				$phone=$data['phone'];

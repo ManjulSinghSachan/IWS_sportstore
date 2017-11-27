@@ -14,11 +14,11 @@ if(!empty($search_field)){
 			$search_field=str_replace(' ','_',$search_field);
 			$query="SELECT category_name FROM categories WHERE category_name LIKE '%".mysqli_real_escape_string($connect, $search_field)."%'";
 			
-			if(!($query_run=mysql_query($query))){
+			if(!($query_run=mysqli_query($connect,$query))){
 				echo "Bad query";
 			}
 			
-			while($query_result=mysql_fetch_assoc($query_run)){
+			while($query_result=mysqli_fetch_assoc($query_run)){
 				$name=$query_result['category_name'];
 				$newname=str_replace('_',' ',$name);
 				echo '<a href="search_result_page.php?category_name='.$name.'">'.$newname.'</a><br>';

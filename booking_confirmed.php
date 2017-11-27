@@ -50,10 +50,10 @@
 	
 	if(!empty($user_id)){
 		$query="SELECT * from cartpage where user_id='$user_id';";
-		if($ret=mysql_query($query)){
-			$num_rows=mysql_num_rows($ret);
+		if($ret=mysqli_query($connection,$query)){
+			$num_rows=mysqli_num_rows($ret);
 			if($num_rows>0){
-				while($data=mysql_fetch_array($ret)){
+				while($data=mysqli_fetch_array($ret)){
 					$product_id.=$data['product_id'].',';
 					$price+=$data['price']*$data['quantity'];
 				}
@@ -64,12 +64,12 @@
 	//echo $product_id;
 	if($price>0){
 		$query="INSERT INTO orders (user_id,total_price,products) VALUES ('$user_id','$price','$product_id');";
-		if($result=mysql_query($query))
+		if($result=mysqli_query($connection,$query))
 			$msg="OK";
 		else
 			$msg="Bad query";
 		$query="DELETE FROM cartpage WHERE user_id='$user_id';";
-		$result=mysql_query($query);
+		$result=mysqli_query($conneciton,$query);
 	}
  
  ?>

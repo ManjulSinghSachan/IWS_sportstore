@@ -271,13 +271,17 @@
 							$user_id = $_SESSION['user_id'];
                             $sql = "SELECT* FROM login WHERE user_id = '$user_id';";
                             //echo $sql;
-							$ret = mysqli_query($connection,$sql);
-							$prev = mysqli_fetch_array($ret)[4];
+                            $ret = mysqli_query($connection,$sql);
+                            
+                            $prev = mysqli_fetch_array($ret)[5];
+                            //echo $prev;
                             $array = explode(",",$prev);
+                            
+                            
                             
 							for($i = 0;$i<sizeof($array);$i++){
                                 $sql = "SELECT* FROM products WHERE product_id = '$array[$i]';";
-                                
+                                //echo $array[$i];
 								$ret = mysqli_query($connection,$sql);
 								$data = mysqli_fetch_array($ret);
 								// product ID
@@ -290,10 +294,7 @@
 								$photo = $data['photo'];		
 								
 							
-							
-								
-				
-				
+											
 					?>
 					
 					<div class="col-md-2 col-sm-6">

@@ -5,7 +5,7 @@
     $str = $_POST['id'];
     $arr = explode(',',$str);
 	
-	$return_value=logged_in();
+	$return_value = logged_in();
 	if($return_value)
 		//header("Location:home.php");
 		$user_id =  $_SESSION['user_id'];

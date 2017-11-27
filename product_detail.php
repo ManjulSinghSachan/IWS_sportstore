@@ -123,7 +123,7 @@
 					$user_id = $_SESSION['user_id'];
 					$query = "SELECT* FROM login where user_id = '$user_id';";
 					$ret = mysqli_query($connect, $query);
-					$product_data = mysqli_fetch_array($ret)[4];
+					$product_data = mysqli_fetch_array($ret)[5];
 					$array = explode(',',$product_data);
 					$search =array_search((string)$id,$array); 
 					

@@ -112,9 +112,9 @@
 		$user_id =  $_SESSION['user_id'];
 		
       $query = "SELECT * FROM cartpage WHERE user_id = '$user_id' ORDER BY product_id ASC;";
-      $result = mysql_query($query);
+      $result = mysqli_query($connection,$query);
       $subtotal = 0;
-      $num = mysql_num_rows($result);
+      $num = mysqli_num_rows($result);
       ?>
 
 
@@ -159,7 +159,7 @@
                                       <?php
                                       if($num > 0)
                                       {
-                                          while($row = mysql_fetch_array($result))
+                                          while($row = mysqli_fetch_array($result))
                                           {
                                               $subtotal = $subtotal + ((int)$row['price'] * (int)$row['quantity']);
                                        ?>
@@ -270,13 +270,13 @@
 						if(logged_in()){
 							$user_id = $_SESSION['user_id'];
 							$sql = "SELECT* FROM login WHERE user_id = '$user_id';";
-							$ret = mysql_query($sql);
-							$prev = mysql_fetch_array($ret)[4];
+							$ret = mysqli_query($connection,$sql);
+							$prev = mysqli_fetch_array($ret)[4];
 							$array = explode(",",$prev);
 							for($i = 0;$i<sizeof($array);$i++){
 								$sql = "SELECT* FROM products WHERE product_id = '$array[$i]';";
-								$ret = mysql_query($sql);
-								$data = mysql_fetch_array($ret);
+								$ret = mysqli_query($connection,$sql);
+								$data = mysqli_fetch_array($ret);
 								// product ID
 								$id = $data['product_id'];
 								// product name

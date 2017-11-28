@@ -6,10 +6,7 @@
 
     <meta charset="utf-8">
     <meta name="robots" content="all,follow">
-    <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Obaju e-commerce template">
-    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
 
     <title>
@@ -100,50 +97,12 @@ We’ve created a seamless user interface to let you scroll through your favouri
                         <h2>Team Members:</h2>
 
                         <ol>
-                            <li>Amitesh</li>
-                            
-							<li>Junaid Tinwala</li>
+                            <li>Amitesh Sinha</li>
+  							<li>Junaid Tinwala</li>
 							<li>Kanishk Anand</li>
-							<li>Manjul</li>
+							<li>Manjul Singh</li>
                         </ol>
 
-                      <!--  <blockquote>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
-                                tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
-                        </blockquote>
-
-                        <h3>Header Level 3</h3>
-
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                            <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ul>
-
-                        <hr>
-
-                        <h2>Images</h2>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <p class="text-center">
-                                    <img src="img/detailsquare.jpg" class="img-circle img-responsive" alt="">
-                                </p>
-                                <p class="text-center">circle</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p class="text-center">
-                                    <img src="img/detailsquare.jpg" class="img-thumbnail  img-responsive" alt="">
-                                </p>
-                                <p class="text-center">thumbnail</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p class="text-center">
-                                    <img src="img/detailsquare.jpg" class="img-rounded img-responsive" alt="">
-                                </p>
-                                <p class="text-center">rounded</p>
-                            </div>
-                        </div>
-                        -->
                     </div>
 
 

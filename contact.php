@@ -6,7 +6,10 @@
 
     <meta charset="utf-8">
     <meta name="keywords" content="">
-
+	<meta name="description" content="SportsKart">
+	 <meta name="robots" content="all,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
     <title>
 	SportsKart
    </title>

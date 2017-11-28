@@ -6,12 +6,10 @@
 
     <meta charset="utf-8">
     <meta name="robots" content="all,follow">
-    <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="SportKart e-commerce template">
-    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
-    <meta name="keywords" content="">
-
+    <meta name="keywords" content="sportskart">
+	<meta name="description" content="SportsKart">
+   
     <title>
         SportKart : e-commerce website
     </title>

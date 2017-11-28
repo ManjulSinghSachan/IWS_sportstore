@@ -8,7 +8,7 @@ if(!empty($search_field)){
 		
 		$connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
 		
-		if(mysqli_connect_errno()){
+		if(!(mysqli_connect_errno())){
 			
 			
 			$search_field=str_replace(' ','_',$search_field);

@@ -1,6 +1,7 @@
 
 <?php
 require 'connect.php';
+require 'cookies.php';
 require 'session.php';
 	
 if(!logged_in()){
@@ -28,9 +29,15 @@ if(!logged_in()){
 		}
 	function logout(value){
 		//alert(value);
+		var link=document.getElementById('loginlink');
+		
 		if(value==1){
+			link.setAttribute('data-target','');
 			window.location.href="logout.php";
 		}
+		else{
+			link.setAttribute('data-target','#login-modal');
+		}		
 	}
 	
 </script>

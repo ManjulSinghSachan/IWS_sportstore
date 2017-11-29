@@ -2,6 +2,7 @@
 <?php
 
     require 'core_file.php';
+    require 'session.php';
     $name = $_POST['name'];
 	
 	$return_value=logged_in();

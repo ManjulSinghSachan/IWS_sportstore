@@ -1,17 +1,19 @@
 
 <?php
 
-    require 'core_file.php';
+	require 'core_file.php';
+	require 'session.php';
+
     $str = $_POST['id'];
-    $arr = explode(',',$str);
+	$arr = explode(',',$str);
 	
+	$connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
+    
 	$return_value = logged_in();
 	if($return_value)
-		//header("Location:home.php");
 		$user_id =  $_SESSION['user_id'];
 
-    $connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
-    
+   
     $id = intval($arr[0]);
 	$op = $arr[1];
 

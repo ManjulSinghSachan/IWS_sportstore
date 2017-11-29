@@ -9,7 +9,7 @@
 	<meta name="description" content="SportsKart">
     
     <title>
-        SportKart : e-commerce website
+        SportsKart : e-commerce website
     </title>
 
     <meta name="keywords" content="">

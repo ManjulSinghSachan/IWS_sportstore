@@ -9,9 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="sportskart">
 	<meta name="description" content="SportsKart">
+    
+    <!-- Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110427452-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-110427452-1');
+    </script>
+    <!-- -->
+
 
     <title>
-        SportKart : e-commerce website
+        SportsKart : e-commerce website
     </title>
 
     <meta name="keywords" content="">

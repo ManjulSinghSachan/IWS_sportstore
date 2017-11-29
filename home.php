@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="sportskart">
 	<meta name="description" content="SportsKart">
-   
+
     <title>
         SportKart : e-commerce website
     </title>
@@ -49,7 +49,7 @@
                 <div class="col-md-12">
                     <div id="main-slider">
                         <div class="item">
-                            <img src="img/main-slider1.jpg" alt="" class="img-responsive">
+                            <img class="img-responsive" src="img/main-slider1.jpg" alt="">
                         </div>
                         <div class="item">
                             <img class="img-responsive" src="img/main-slider2.jpg" alt="">
@@ -87,7 +87,7 @@
                                 </div>
 
                                 <h3><a href="#">Best prices</a></h3>
-                                <p>You can check that the height of the boxes adjust when longer text like this one is used in one of them.</p>
+                                <p>Get quality products at the lowest prices.</p>
                             </div>
                         </div>
 

@@ -1262,22 +1262,7 @@ h1 {
   color: #777777;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
-  color: #333333;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-nav > li > a:focus{
-  color: #333333;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-nav > li > a:active {
-  color: #555555;
-  background-color: #e32c26;
-}
-
-/*.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #333333;
   background-color: transparent;
@@ -1285,9 +1270,9 @@ h1 {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #555555;
+  color: #777777;
   background-color: #e32c26;
-}*/
+}
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {
@@ -1311,7 +1296,7 @@ h1 {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: #e32c26;
-  color: #555555;
+  color: #FFFFFF;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {

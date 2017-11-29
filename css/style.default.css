@@ -178,7 +178,7 @@ h1 {
 }
 #hot .product-slider .owl-controls .owl-page.active span,
 #hot .product-slider .owl-controls.clickable .owl-page:hover span {
-  background: #e32c26;
+  background: #000000;
 }
 #advantages {
   text-align: center;
@@ -242,7 +242,7 @@ h1 {
 #main-slider .owl-controls .owl-page.active span,
 .box.slideshow .owl-controls.clickable .owl-page:hover span,
 #main-slider .owl-controls.clickable .owl-page:hover span {
-  background: #e32c26;
+  background: #FFFFFF;
 }
 .breadcrumb {
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
@@ -970,7 +970,7 @@ h1 {
 /*!
  * Yamm!3
  * Yet another megamenu for Bootstrap 3
- * 
+ *
  * http://geedmo.github.com/yamm3
  */
 .yamm .nav,
@@ -1257,10 +1257,27 @@ h1 {
 .navbar-default .navbar-text {
   color: #777777;
 }
+
 .navbar-default .navbar-nav > li > a {
   color: #777777;
 }
-.navbar-default .navbar-nav > li > a:hover,
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #333333;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a:focus{
+  color: #333333;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a:active {
+  color: #555555;
+  background-color: #e32c26;
+}
+
+/*.navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #333333;
   background-color: transparent;
@@ -1270,7 +1287,7 @@ h1 {
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555555;
   background-color: #e32c26;
-}
+}*/
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {

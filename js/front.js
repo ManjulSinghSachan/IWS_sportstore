@@ -1,11 +1,10 @@
-
 $(function() {
 
     animations();
     productDetailGallery(4000);
     carousels();
     utils();
-    
+
 });
 
 

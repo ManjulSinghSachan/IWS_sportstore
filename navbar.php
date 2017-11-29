@@ -95,6 +95,8 @@ if(!logged_in()){
 
                         </form>
 
+												<p><a href="customer-account.php">Forgot password?</a></p>
+
                         <p class="text-center text-muted">Not registered yet?</p>
                         <p class="text-center text-muted"><a href="register.php"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
 
@@ -270,7 +272,7 @@ if(!logged_in()){
                         </ul>
                     </li>
 
-                    <li class="dropdown yamm-fw">
+                    <!-- <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">More Options <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
@@ -288,21 +290,21 @@ if(!logged_in()){
                                                 </li>
                                             </ul>
                                         </div> -->
-                                        <div class="col-sm-3">
+                                        <!-- <div class="col-sm-3">
                                             <h5>User</h5>
                                             <ul>
                                                 <li><a href="register.php">Register / login</a>
-                                                </li>
+                                                </li> -->
                                                <!-- <li><a href="customer-orders.html">Orders history</a>
                                                 </li>
                                                 <li><a href="customer-order.html">Order history detail</a>
                                                 </li>
                                                 <li><a href="customer-wishlist.html">Wishlist</a> -->
-                                                </li>
+                                                <!-- </li>
                                                 <li><a href="customer-account.php">Customer account / change password</a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                         <!-- <div class="col-sm-3">
                                             <h5>Order process</h5>
                                             <ul>
@@ -318,12 +320,12 @@ if(!logged_in()){
                                                 </li>
                                             </ul>
                                         </div> -->
-                                    </div>
+                                    <!-- </div>
                                 </div>
                                 <!-- /.yamm-content -->
-                            </li>
+                            <!-- </li>
                         </ul>
-                    </li>
+                    </li> --> --> -->
                 </ul>
 
             </div>

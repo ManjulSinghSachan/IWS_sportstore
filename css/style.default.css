@@ -1272,10 +1272,6 @@ h1 {
   background-color: transparent;
 }
 
-.navbar-default .navbar-nav > li > a:active {
-  color: #555555;
-  background-color: #e32c26;
-}
 
 /*.navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -1311,7 +1307,7 @@ h1 {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: #e32c26;
-  color: #555555;
+  color: #FFFFFF;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {

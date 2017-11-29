@@ -66,5 +66,4 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
 }
 
 $country = ip_info("Visitor","Country");
-echo $country;
 ?>

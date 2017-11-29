@@ -40,6 +40,7 @@
 
 <body>
 	<?php require 'navbar.php';?>
+	<?php require 'location.php';?>
 
 	<div id="all">
 
@@ -125,147 +126,62 @@
 
                 <div class="container">
                     <div class="product-slider">
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="product_detail.php?product_id=1">
-                                                <img src="spm/footballshirt_.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="product_detail.php?product_id=1">
-                                                <img src="spm/footballshirt_.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="product_detail.php?product_id=1" class="invisible">
-                                    <img src="spm/footballshirt_.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3><a href="product_detail.php?product_id=1">cramer 5 pad football shirt</a></h3>
-                                    <p class="price">Rs.3200.00</p>
-                                </div>
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="product_detail.php?product_id=2">
-                                                <img src="spm/41+9dJXqhPL._AC_US200_.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="product_detail.php?product_id=2">
-                                                <img src="spm/41+9dJXqhPL._AC_US200_.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="product_detail.php?product_id=2" class="invisible">
-                                    <img src="spm/41+9dJXqhPL._AC_US200_.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3><a href="product_detail.php?product_id=2">adidas tastigo 17 shorts</a></h3>
-                                    <p class="price"><del>Rs.400</del> Rs.280.00</p>
-                                </div>
-                                <!-- /.text -->
-
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="product_detail.php?product_id=3">
-                                                <img src="spm/51ExATrM6hL._AC_US200_.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="product_detail.php?product_id=3">
-                                                <img src="spm/51ExATrM6hL._AC_US200_.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="product_detail.php?product_id=3" class="invisible">
-                                    <img src="img/product3.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3><a href="product_detail.php?product_id=3">Nike Men's Hypervenom Phelon II Njr Ic Indoor Socc</a></h3>
-                                    <p class="price">Rs.500.00</p>
-                                </div>
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="product_detail.php?product_id=4">
-                                                <img src="spm/51aGv-KYwML._AA160_.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="product_detail.php?product_id=4">
-                                                <img src="spm/51aGv-KYwML._AA160_.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="product_detail.php?product_id=4" class="invisible">
-                                    <img src="img/product3.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3><a href="product_detail.php?product_id=4">Battle Ultra-Stick Receiver Gloves</a></h3>
-                                    <p class="price">Rs.200.00</p>
-                                </div>
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="product_detail.php?product_id=5">
-                                                <img src="spm/41jjgGAX3PL._AC_US200_.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="product_detail.php?product_id=5">
-                                                <img src="spm/41jjgGAX3PL._AC_US200_.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="product_detail.php?product_id=5" class="invisible">
-                                    <img src="img/product2.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3><a href="product_detail.php?product_id=5">FOCIL INDIAN TEAM CRICKET T-SHIRT FOR MENS</a></h3>
-                                    <p class="price">Rs.370.00</p>
-                                </div>
-                                <!-- /.text -->
-
-                            </div>
-                            <!-- /.product -->
-                        </div>
+				<?php	
+				
+                    $query="SELECT p_ids FROM geolocation WHERE region='".$country."';";
+					$result=mysqli_query($connection,$query);
+					if(mysqli_num_rows($result)==1){
+					$data=mysqli_fetch_assoc($result);
+					$str=$data['p_ids'];
+					$str='(' +$str + ')';
+					$q="SELECT products.product_id, products.category_id, products.product_name, products.price, products.photo FROM products WHERE products.product_id IN '".$str."';";
+					$r=mysqli_query($connection,$q);
+					$num_rows - mysqli_num_rows($r);
+					
+					if($num_rows > 0){
+						while($d=mysqli_fetch_assoc($r)){
+							//Product ID
+							$id = $d['product_id'];
+							//Product Name
+							$name = $d['product_name'];
+							//Product Price
+							$price = $d['price'];
+							//Product Photo
+							$photo = $d['photo'];
+				?>
+				<div class="item">
+								<div class="product">
+									<div class="flip-container">
+										<div class="flipper">
+											<div class="front">
+												<a href="product_detail.php?product_id=<?php echo $id?>">
+													<img src="<?php echo $photo?>" alt="" class="img-responsive">
+												</a>
+											</div>
+											<div class="back">
+												<a href="product_detail.php?product_id=<?php echo $id?>">
+													<img src="<?php echo $photo?>" alt="" class="img-responsive">
+												</a>
+											</div>
+										</div>
+									</div>
+									<a href="product_detail.php?product_id=<?php echo $id?>" class="invisible">
+										<img src="<?php echo $photo?>" alt="" class="img-responsive">
+									</a>
+									<div class="text">
+										<h3><a href="product_detail.php?product_id=<?php echo $id?>"><?php echo $name?></a></h3>
+										<p class="price">Rs.<?php echo $price?></p>
+									</div>
+									<!-- /.text -->
+								</div>
+								<!-- /.product -->
+				</div>
+				<?php 
+					}
+			}
+		}
+	
+	?>
 
                         <div class="item">
                             <div class="product">

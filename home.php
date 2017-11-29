@@ -41,7 +41,8 @@
 <body>
 	<?php require 'navbar.php';?>
 	<?php require 'location.php';?>
-
+	
+	
 	<div id="all">
 
         <div id="content">
@@ -127,16 +128,17 @@
                 <div class="container">
                     <div class="product-slider">
 				<?php	
-				
+					
                     $query="SELECT p_ids FROM geolocation WHERE region='".$country."';";
 					$result=mysqli_query($connection,$query);
 					if(mysqli_num_rows($result)==1){
 					$data=mysqli_fetch_assoc($result);
-					$str=$data['p_ids'];
-					$str='(' +$str + ')';
-					$q="SELECT products.product_id, products.category_id, products.product_name, products.price, products.photo FROM products WHERE products.product_id IN '".$str."';";
+					 $str=$data['p_ids'];
+					$str='(' .$str . ')';
+					
+					$q="SELECT products.product_id, products.category_id, products.product_name, products.price, products.photo FROM products WHERE products.product_id IN ".$str.";";
 					$r=mysqli_query($connection,$q);
-					$num_rows - mysqli_num_rows($r);
+					$num_rows = mysqli_num_rows($r);
 					
 					if($num_rows > 0){
 						while($d=mysqli_fetch_assoc($r)){
@@ -208,12 +210,7 @@
                                 </div>
                                 <!-- /.text -->
 
-                                <div class="ribbon gift">
-                                    <div class="theribbon">GIFT</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-
+                                
                             </div>
                             <!-- /.product -->
                         </div>
@@ -244,23 +241,7 @@
                                 </div>
                                 <!-- /.text -->
 
-                                <div class="ribbon sale">
-                                    <div class="theribbon">SALE</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-
-                                <div class="ribbon new">
-                                    <div class="theribbon">NEW</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-
-                                <div class="ribbon gift">
-                                    <div class="theribbon">GIFT</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
+                               
                             </div>
                             <!-- /.product -->
                         </div>

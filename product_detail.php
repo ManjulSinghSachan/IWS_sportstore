@@ -174,7 +174,8 @@
                         <li><a href="search_result_page.php?category_name=<?php echo $data2[0]?>"><?php echo $arr[2]?></a>
                         </li>
                         <li><?php echo $name ?></li>
-						<li><?php echo $product_data?></li>
+						<!-- 
+                        <li><?php echo $product_data?></li> -->
 						
                     </ul>
 

@@ -55,7 +55,7 @@ if(!logged_in()){
 						else
 							$val=0;
 					?>
-                    <li onclick="logout('<?php echo $val?>')"><a href="#" data-toggle="modal" data-target="#login-modal"><?php if(logged_in())
+                    <li onclick="logout('<?php echo $val?>')"><a id= "loginlink" href="#" data-toggle="modal" data-target="#login-modal"><?php if(logged_in())
 										$log_str="Log Out?";
 									else
 										$log_str="Login";

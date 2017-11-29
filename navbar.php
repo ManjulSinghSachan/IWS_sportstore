@@ -271,7 +271,7 @@ if(!logged_in()){
                     </li>
 
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">More <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">More Options <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -303,7 +303,7 @@ if(!logged_in()){
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <!-- <div class="col-sm-3">
                                             <h5>Order process</h5>
                                             <ul>
                                                 <li><a href="basket.php">Shopping cart</a>
@@ -317,7 +317,7 @@ if(!logged_in()){
                                                 <li><a href="checkout4.php">Checkout - step 4</a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <!-- /.yamm-content -->

@@ -95,7 +95,7 @@ if(!logged_in()){
 
                         </form>
 
-												<p><a href="customer-account.php">Forgot password?</a></p>
+												<p class="text-center"><a href="customer-account.php">Forgot password?</a></p>
 
                         <p class="text-center text-muted">Not registered yet?</p>
                         <p class="text-center text-muted"><a href="register.php"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
@@ -325,7 +325,7 @@ if(!logged_in()){
                                 <!-- /.yamm-content -->
                             <!-- </li>
                         </ul>
-                    </li> --> --> -->
+                    </li> -->
                 </ul>
 
             </div>

@@ -3,23 +3,23 @@
 require 'connect.php';
 require 'cookies.php';
 require 'session.php';
-	
+
 if(!logged_in()){
 	include 'login.php';
 }
-?>	
+?>
 
 <script type="text/javascript">
 	function search_function(){
-			
+
 			if(window.XMLHttpRequest)
 				var xmlHttp= new XMLHttpRequest();
 			else
 				var xmlHttp= new ActiveXObject('Microsoft.XMLHTTP');
-			
+
 			xmlHttp.onreadystatechange=function(){
 				if(xmlHttp.readyState==4 && xmlHttp.status==200){
-					
+
 					document.getElementById('result').innerHTML=xmlHttp.responseText;
 				}
 			}
@@ -30,23 +30,23 @@ if(!logged_in()){
 	function logout(value){
 		//alert(value);
 		var link=document.getElementById('loginlink');
-		
+
 		if(value==1){
 			link.setAttribute('data-target','');
 			window.location.href="logout.php";
 		}
 		else{
 			link.setAttribute('data-target','#login-modal');
-		}		
+		}
 	}
-	
+
 </script>
-	
+
 
 <div id="top" style="position:relative">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
-                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">Offer of the day</a>  <a href="#">Get flat 35% off on orders over Rs.50!</a>
+                <a href="#" class="btn btn-success btn-sm">Offer of the day</a>  <a href="#">Get flat 35% off on orders over Rs.50!</a>
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
@@ -62,18 +62,18 @@ if(!logged_in()){
 								echo $log_str?>
 						</a>
                     </li>
-					
+
                     <li><a href="register.php">Register</a>
                     </li>
                     <li><a href="contact.php">Contact</a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
             <div class="modal-dialog modal-sm">
-				
+
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -87,7 +87,7 @@ if(!logged_in()){
                             <div class="form-group">
                                 <input type="password" class="form-control" id="password-modal" placeholder="password" name="pwd">
                             </div>
-							<p style="color:red"><?php echo $error?></p>	
+							<p style="color:red"><?php echo $error?></p>
                             <p class="text-center">
                                 <button class="btn btn-primary" name="log_in_btn"><i class="fa fa-sign-in"></i>
 										Log in</button>
@@ -114,7 +114,7 @@ if(!logged_in()){
         <div class="container">
             <div class="navbar-header">
 
-                <a class="navbar-brand home" href="home.php" data-animate-hover="bounce">
+                <a class="navbar-brand home" href="home.php">
                     <img src="img/logo.png" alt="SportsKart logo" class="hidden-xs">
                     <img src="img/logo-small.png" alt="SportsKart logo" class="visible-xs"><span class="sr-only">SportKart - go to homepage</span>
                 </a>
@@ -128,7 +128,7 @@ if(!logged_in()){
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="check_login.php">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">Kart</span>
+                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">Cart</span>
                     </a>
                 </div>
             </div>
@@ -185,7 +185,7 @@ if(!logged_in()){
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
-      
+
                                             <h5>Cricket</h5>
                                             <ul>
                                                 <li><a href="search_result_page.php?category_name=men_cricket_t-shirts">T-Shirts</a>
@@ -205,7 +205,7 @@ if(!logged_in()){
                         </ul>
                     </li>
 					 <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Ladies <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Women <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -250,7 +250,7 @@ if(!logged_in()){
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
-      
+
                                             <h5>Cricket</h5>
                                             <ul>
                                                 <li><a href="search_result_page.php?category_name=women_cricket_t-shirts">T-Shirts</a>
@@ -332,7 +332,7 @@ if(!logged_in()){
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="check_login.php" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">Kart</span></a>
+                    <a href="check_login.php" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">Cart</span></a>
                 </div>
                 <!--/.nav-collapse -->
 
@@ -352,14 +352,14 @@ if(!logged_in()){
                         <input type="text" class="form-control" placeholder="Search" id="search_field" name="search_field" onkeyup="search_function()">
                         <span class="input-group-btn">
 
-			<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+												<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
 
-		    </span>
+		    								</span>
                     </div>
                 </form>
-			</div>
-			<div id="result" style="font-size:18px;background-color:white;position:relative;height:auto;overflow:hidden;float:right;padding-right:150px;"></div>
-          
+						</div>
+						<div id="result" style="font-size:18px;background-color:white;position:relative;height:auto;overflow:hidden;float:right;padding-right:150px;"></div>
+
             <!--/.nav-collapse -->
 
         </div>

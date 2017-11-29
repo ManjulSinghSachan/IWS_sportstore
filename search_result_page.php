@@ -56,11 +56,11 @@
 				          //alert("Product added to Kart Successfully!");
 						  //alert(msg);
 						  if(msg=="OK")
-							alert("Successfully Added to Kart! Checkout the Kart Page!")
+							alert("Successfully Added to Cart! Checkout the Cart Page!")
 							else
 								alert(msg);
 				        });
-						
+
 
 				      });
 					});
@@ -74,7 +74,7 @@
 
 <body>
 	<?php require 'navbar.php';?>
-	<?php 
+	<?php
 			$category_name="";
 			if(isset($_GET['category_name'])&&!empty($_GET['category_name'])){
 				$category_name=$_GET['category_name']."%";
@@ -99,17 +99,17 @@
                     <ul class="breadcrumb">
                         <li><a href="home.php">Home</a></li>
                         <li>
-						
-						
+
+
 						<?php
 						if(sizeof($arr) > 2){
 							echo "<a href=\"search_result_page.php?category_name=".$arr[0]."\">".$arr[0]."</a>";
 						}
-						else	
+						else
 							echo $arr[0];
-						
+
 						?>
-						
+
 						</li>
 						<?php
 							if(sizeof($arr) > 2)
@@ -119,9 +119,9 @@
 								}
 								else
 									echo "<li>$arr[1]</li>";
-								
-								
-						
+
+
+
 						?>
                     </ul>
                 </div>
@@ -151,7 +151,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="search_result_page?category_name=women">Ladies </a>
+                                    <a href="search_result_page?category_name=women">Women </a>
                                     <ul>
                                          <li><a href="search_result_page.php?category_name=women_football">Football</a>
                                         </li>
@@ -174,7 +174,7 @@
 				<?php
 
 						$connect = mysqli_connect("sql12.freemysqlhosting.net:3306","sql12206252","qDhsLVHUV4","sql12206252");
-						
+
 						$query= "SELECT categories.category_id, products.product_id,products.category_id,products.product_name,products.price,products.photo from categories,products WHERE categories.category_name LIKE '".mysqli_real_escape_string($connect ,$category_name)."' AND products.category_id=categories.category_id;";
 						if($ret=mysqli_query($connect ,$query)){
 							$msg="Query executed";
@@ -198,7 +198,7 @@
 					//echo $p_count;
 					if ($p_count % 3 == 1 && $p_count > 1){
 						echo "<div class=\"col-md-2\"></div>";
-						
+
 					}
 				?>
 				 <div class="col-md-3 col-sm-6">
@@ -233,8 +233,8 @@
                             </div>
                             <!-- /.product -->
                     </div>
-					
-					
+
+
 				<?php
 								}
 							}
@@ -246,7 +246,7 @@
 							echo "Bad Query";
 						}
 						$_GET['search_field']="";
-					
+
 
 				?>
 
@@ -259,4 +259,3 @@
 	<?php require 'footer.php';?>
 </body>
 </html>
-

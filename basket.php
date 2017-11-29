@@ -107,7 +107,9 @@
 
 	  $return_value=logged_in();
 	  if($return_value)
-		$user_id =  $_SESSION['user_id'];
+        $user_id =  $_SESSION['user_id'];
+      else
+        header('location:register.php');
 		
       $query = "SELECT * FROM cartpage WHERE user_id = '$user_id' ORDER BY product_id ASC;";
       $result = mysqli_query($connection,$query);

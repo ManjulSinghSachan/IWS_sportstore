@@ -51,7 +51,7 @@
 							alert(msg);
 				        });
 				      });
-					  
+					
 					  $(".addToKart2").click(function() {
 								//alert("d");
 								var s = $(this).attr('id');
@@ -60,15 +60,15 @@
 				        type: "POST",
 				        url: "addtocart.php",
 				        data: { name: s }
-				        }).done(function(msg) {
-				          //alert("Product Added to Kart! Checkout the Kart Page!");
-						  //alert(msg);
+				        }).done(function(strtemp='') {
+                            window.location.replace("basket.php");
+                            
 				        });
-							window.location.replace("basket.php");
+							
 				      });
+                  });	  
 					  
-					  
-					});
+					
 		</script>
 
 

@@ -8,7 +8,7 @@
                         <h4>Pages</h4>
 
                         <ul>
-                            <li><a href="aboutus.html">About us</a>
+                            <li><a href="aboutus.php">About us</a>
                             </li>
                            <!--- <li><a href="text.html">Terms and conditions</a>
                             </li>

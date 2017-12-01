@@ -30,7 +30,11 @@ $count=0;
 					echo "updated";
 					setcookie($cookie_name,$cookie_value,time()+(86400*30),"/");
 					$_SESSION["user_id"]=$user_id;
-					header("Location:home.php");
+					if(isset($_GET['location']))
+						$location=htmlspecialchars($_GET['location']);
+					else
+						$location='home.php';
+					header("Location:".$location);
 				}
 				else{
 					echo "cannot execute";

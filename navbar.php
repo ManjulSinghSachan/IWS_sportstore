@@ -46,7 +46,7 @@ if(!logged_in()){
 <div id="top" style="position:relative">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
-                <a href="#" class="btn btn-success btn-sm">Offer of the day</a>  <a href="#">Get flat 35% off on orders over Rs.50!</a>
+                <a href="#" class="btn btn-success btn-sm">Offer of the day</a>  <a href="#">Get flat 35% off on orders over Rs.500!</a>
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
@@ -62,9 +62,11 @@ if(!logged_in()){
 								echo $log_str?>
 						</a>
                     </li>
-
-                    <li><a href="register.php">Register</a>
-                    </li>
+                    <?php
+                        if($val == 0)
+                            echo "<li><a href=\"register.php\">Register</a></li>";
+                    ?>
+                    
                     <li><a href="contact.php">Contact</a>
                     </li>
 

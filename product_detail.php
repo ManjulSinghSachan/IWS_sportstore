@@ -150,8 +150,12 @@
 					}
 					
 					
-					//store in database
-					$product_data = implode(",",$array);
+                    //store in database
+                    echo "<div>$product_data</div>";
+                    $product_data = implode(",",$array);
+                    if(strcmp(substr($product_data,0,1),',') == 0)
+                        $product_data = substr($product_data,1);
+                    echo "<div>$product_data</div>";
 					$sql = "UPDATE login SET products_viewed = '$product_data' WHERE user_id = '$user_id';";
 					mysqli_query($connect, $sql);
 				}
@@ -240,17 +244,7 @@
                                 <img src="<?php echo $photo?>" alt="" class="img-responsive">
                             </div>
 
-                            <div class="ribbon sale">
-                                <div class="theribbon">SALE</div>
-                                <div class="ribbon-background"></div>
-                            </div>
-                            <!-- /.ribbon -->
-
-                            <div class="ribbon new">
-                                <div class="theribbon">NEW</div>
-                                <div class="ribbon-background"></div>
-                            </div>
-                            <!-- /.ribbon -->
+                            
 
                         </div>
                         <div class="col-sm-6">

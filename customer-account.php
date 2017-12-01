@@ -49,12 +49,12 @@
     <?php require 'navbar.php';?>
 	
 	<?php	
-	
+		if(empty($_SESSION['user_id']))
+			header("Location:register.php");
 	
 		$error="";$debug="";
 		if(isset($_POST["save_changes"])){
-			if(empty($_SESSION['user_id']))
-				header("Location:register.php");
+			
 			
 			if(!empty($_POST['firstname']))
 				$firstname=$_POST['firstname'];

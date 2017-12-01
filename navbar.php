@@ -82,7 +82,7 @@ if(!logged_in()){
                         <h4 class="modal-title" id="Login">Customer login</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="login.php" method="post">
+                        <form action="login.php?location=<?php echo urlencode($_SERVER['REQUEST_URI'])?>" method="post">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="email-modal" placeholder="email" name="email">
                             </div>

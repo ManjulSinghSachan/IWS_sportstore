@@ -119,12 +119,14 @@
                                         <tbody>
 
                                           <?php
+                                          $total = 0;
                                           if($num > 0)
-                                          {
+                                          { 
+                                              
 
                                               while($row = mysqli_fetch_array($result))
                                               {
-                                                  $subtotal = $subtotal + ((int)$row['price'] * (int)$row['quantity']);
+                                                  $subtotal = ((int)$row['price'] * (int)$row['quantity']);
 
                                            ?>
                                             <tr>
@@ -137,20 +139,31 @@
                                                 </td>
                                                 <td><?php echo intval($row['quantity']);?></td>
                                                 <td>Rs.<?php echo $row['price'] ?></td>
-                                                <td>Rs 0.00</td>
-                                                <td>Rs. <?php echo $row['price']*$row['quantity'] ?></td>
+                                                <?php
+                                                    if($subtotal < 500)
+                                                        $discount = 0;
+                                                    else{
+                                                        $discount = round($subtotal * 0.25);
+                                                        $subtotal = $subtotal - $discount;
+                                                        
+                                                    }
+                                                        
+                                                ?>
+                                                <td>Rs. <?php echo $discount?></td>
+                                                <td>Rs. <?php echo $subtotal ?></td>
                                             </tr>
                                             <?php
+                                                $total =  $total + (int)$subtotal;
                                                 }
                                               }
-                                              $total = 10 + (int)$subtotal;
+                                             // $total =  $total + (int)$subtotal;
 
                                             ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th colspan="5">Total</th>
-                                                <th>Rs. <?php echo $subtotal ?></th>
+                                                <th>Rs. <?php echo $total ?></th>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -190,19 +203,20 @@
                                 <tbody>
                                     <tr>
                                         <td>Order subtotal</td>
-                                        <th><?php echo $subtotal ?></th>
+                                        <th>Rs. <?php echo $total ?></th>
                                     </tr>
+                                    <?php 
+                                        $tax = 0;
+                                        if($total > 500)
+                                        $tax = round($total * 0.18);
+                                    ?>
                                     <tr>
-                                        <td>Shipping and handling</td>
-                                        <th>Rs 0.00</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Tax</td>
-                                        <th>Rs 0.00</th>
+                                        <td>Tax (18%)</td>
+                                        <th>Rs.<?php echo $tax ?></th>
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>Rs.<?php echo $subtotal ?></th>
+                                        <th>Rs.<?php echo $total + $tax ?></th>
                                     </tr>
                                 </tbody>
                             </table>

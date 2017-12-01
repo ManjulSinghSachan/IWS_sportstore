@@ -40,7 +40,10 @@
 </head>
 
 <body>
- <?php require 'navbar.php';?>
+ <?php require 'navbar.php';
+     
+       require 'connect.php';
+ ?>
  <?php 
 	$user_id="";$product_id="";$category_id="";$price=0;$quantity=1;$msg="";
 	if(isset($_SESSION['user_id'])&&!empty($_SESSION['user_id']))
@@ -67,7 +70,7 @@
 		else
 			$msg="Bad query";
 		$query="DELETE FROM cartpage WHERE user_id='$user_id';";
-		$result=mysqli_query($conneciton,$query);
+		$result=mysqli_query($connection,$query);
 	}
  
  ?>
